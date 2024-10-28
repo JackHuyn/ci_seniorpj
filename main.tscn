@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://l0pfoqyrbu87"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_ac4mw"]
+[ext_resource type="Script" path="res://addons/orbit-controls/orbit-controls.gd" id="1_igpgu"]
+[ext_resource type="PackedScene" uid="uid://dquo50l1eldml" path="res://attack_board.tscn" id="3_k3g7q"]
+[ext_resource type="PackedScene" uid="uid://b7w6gs1wn2pdy" path="res://board.tscn" id="3_wmot2"]
+
+[node name="Main" type="Node3D" node_paths=PackedStringArray("camera")]
+script = ExtResource("1_ac4mw")
+board_prefab = ExtResource("3_wmot2")
+attack_board_prefab = ExtResource("3_k3g7q")
+camera = NodePath("Camera3D")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.63091, 8.9891)
+
+[node name="OrbitControls" type="Node3D" parent="."]
+script = ExtResource("1_igpgu")
+_camera = NodePath("../Camera3D")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.205009, 0.97876, 0, -0.97876, 0.205009, 0, 3.52663, 0)
