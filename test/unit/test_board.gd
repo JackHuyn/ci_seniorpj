@@ -9,7 +9,6 @@ var board_instance
 func before_each():
 	# Create an instance of the board for each test
 	board_instance = board_script.new()
-	
 	# Add board instance to the scene tree for proper initialization
 	add_child(board_instance)
 
@@ -19,9 +18,6 @@ func after_each():
 
 # Test that the board initializes with the correct number of squares
 func test_board_initialization():
-	# Manually call _ready to initialize the board (since GUT may not call it)
-	board_instance._ready()
-
 	# Assuming Global.main_board_size defines the dimensions of the board (e.g., 4 for a 4x4 board)
 	var expected_squares = Global.main_board_size * Global.main_board_size
 	assert_eq(board_instance.get_child_count(), expected_squares, "The board should have exactly %s squares" % expected_squares)

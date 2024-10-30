@@ -13,8 +13,6 @@ func before_each():
 	# Add board instance to the scene tree for proper initialization
 	add_child(board_instance)
 
-	# Manually call _ready() to initialize the board, as GUT does not handle lifecycle events automatically
-	board_instance._ready()
 
 func after_each():
 	# Clean up after each test
