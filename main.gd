@@ -18,12 +18,14 @@ func CreateBoards():
 			b.board_type = Global.BOARD_TYPE.NEUTRAL
 		elif (board == 2):
 			b.board_type = Global.BOARD_TYPE.BLACK
+		b.add_to_group("main_board")
 		add_child(b)
 
 	#Attack boards
 	for a_b in range(len(Global.attack_boards)):
 		b = attack_board_prefab.instantiate()
 		b.set_attack_board_dict(Global.attack_boards[a_b])
+		b.add_to_group("attack_board")
 		add_child(b)
 
 # Called when the node enters the scene tree for the first time.
