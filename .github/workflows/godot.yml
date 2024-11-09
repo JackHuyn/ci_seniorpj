@@ -11,5 +11,5 @@ jobs:
       - name: Docker test
         uses: ceceppa/godot-gut-ci@main
         with:
-          godot_version: 4.2 
+          godot_version: 4.3 
           gut_params: -gdir=res://test/unit -gsuffix=.test.gd -gprefix=
