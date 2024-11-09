@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
       - name: Docker test
         uses: ceceppa/godot-gut-ci@main
+        with:
+          godot_version: 4.3.0 # uses godot 4.3.0
+          gut_params: -gdir=res://tests -gsuffix=.test.gd -gprefix=
